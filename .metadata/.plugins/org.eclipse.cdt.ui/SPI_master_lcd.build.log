@@ -1,0 +1,23 @@
+00:39:26 **** Incremental Build of configuration Debug for project SPI_master_lcd ****
+make all 
+Building file: ../master.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"master.d" -MT"master.d" -c -o "master.o" "../master.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../SPI.h:10,
+                 from ../master.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../master.c: In function 'main':
+../master.c:16: warning: pointer targets in initialization differ in signedness
+../master.c:21: warning: implicit declaration of function 'SPI_sendString'
+Finished building: ../master.c
+ 
+Building target: SPI_master_lcd.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SPI_master_lcd.map -mmcu=atmega16 -o "SPI_master_lcd.elf"  ./LCD.o ./SPI.o ./master.o   
+./master.o: In function `main':
+../master.c:21: undefined reference to `SPI_sendString'
+make: *** [SPI_master_lcd.elf] Error 1
+
+00:39:26 Build Finished (took 270ms)
+

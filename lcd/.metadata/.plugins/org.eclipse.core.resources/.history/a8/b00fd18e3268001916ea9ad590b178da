@@ -1,0 +1,34 @@
+/*
+ * main.c
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+
+
+#include"LCD.h"
+
+
+
+int main(void){
+	      LCD_init();
+
+
+
+
+
+	      while(1){
+	    	  LCD_gotoRawCol(0,1);
+	    	  	      LCD_displayString("ahmed");
+	    	  	      LCD_gotoRawCol(0,7);
+
+	    	  	      _delay_ms(3000);
+	    	  	      LCD_clearScreen();
+	    	  	      LCD_displayStrRowCol(1,0,"thanks tarek");
+
+	      }
+
+
+
+
+}

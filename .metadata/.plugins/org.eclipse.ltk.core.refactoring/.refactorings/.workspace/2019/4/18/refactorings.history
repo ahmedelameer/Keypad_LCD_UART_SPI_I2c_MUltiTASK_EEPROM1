@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;SPI_master_lcd&apos;" deleteContents="false" description="Delete resource &apos;SPI_master_lcd&apos;" element1="/SPI_master_lcd" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1556480179754"/>
+</session>

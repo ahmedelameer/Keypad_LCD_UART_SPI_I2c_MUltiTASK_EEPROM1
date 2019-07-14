@@ -1,0 +1,66 @@
+/*
+ * LCD.c
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+
+#include"LCD.h"
+
+
+
+void LCD_init(void){
+   /* set the control pins as output pins*/
+	DIRECTION_CTRL_PINS |=(1<<RS)|(1<<RW)|(1<<E);
+     /*out Pins for LCD 8 pins portc */
+	DIRECTION_DATA_PINS=0xFF;
+	LCD_sendCommand(BITS_8_MODES);
+}
+
+void LCD_sendCommand(unit8 command){
+	/*make RS=0 to send command*/
+	Pin_clear(PD,RS);
+	/*make RW=0 to write command*/
+	Pin_clear(PD,RW);
+	/*wait tas before enabling 50ns */
+	_delay_us(1);
+	/* Enable =1 */
+	Pin_output(PD,E);
+	/* wait 190 ns before sending command tpw-tdsw*/
+	_delay_us(1);
+	/* write the command*/
+	PD=command;
+	/*wait tdpw to make enable =0*/
+	_delay_us(1);
+	/* make enable =0*/
+	Pin_clear(PD,E);
+	/*wait th 13ns */
+	_delay_us(1);
+
+
+}
+
+
+
+void LCD_displayChar(unit8 data){
+	/*make RS=1 to send data*/
+	Pin_output(PD,RS);
+	/*make RW=0 to write command*/
+	Pin_clear(PD,RW);
+	/*wait tas before enabling 50ns */
+	_delay_us(1);
+	/* Enable =1 */
+	Pin_output(PD,E);
+	/* wait 190 ns before sending command tpw-tdsw*/
+	_delay_us(1);
+	/* write the command*/
+	PD=data;
+	/*wait tdpw to make enable =0*/
+	_delay_us(1);
+	/* make enable =0*/
+	Pin_clear(PD,E);
+	/*wait th 13ns */
+	_delay_us(1);
+
+
+}

@@ -1,0 +1,13 @@
+03:17:06 **** Clean-only build of configuration Debug for project valeo testt ****
+rm -rf "src/valeo testt.d" "valeo testt.exe" "src/valeo testt.o" 
+rm: cannot remove `valeo testt.exe': Permission denied
+03:17:09 **** Rebuild of configuration Debug for project valeo testt ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\valeo testt.o" "..\\src\\valeo testt.c" 
+gcc -o "valeo testt.exe" "src\\valeo testt.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file valeo testt.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+03:17:18 **** Incremental Build of configuration Debug for project valeo testt ****
+Info: Internal Builder is used for build
+gcc -o "valeo testt.exe" "src\\valeo testt.o" 
+Info: Nothing to build for valeo testt

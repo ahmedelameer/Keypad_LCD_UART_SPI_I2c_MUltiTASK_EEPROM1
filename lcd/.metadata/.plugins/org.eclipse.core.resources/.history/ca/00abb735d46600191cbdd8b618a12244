@@ -1,0 +1,53 @@
+/*
+ * LCD.h
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+
+#ifndef LCD_H_
+#define LCD_H_
+
+#include<string.h>
+#define EIGHT_BITS_MODES
+
+/* control pins*/
+#define  RS     PD4
+#define  RW     PD5
+#define  E      PD6
+#define DIRECTION_CTRL_PINS     DDRD
+#define CTRL_OUTPUT_PINS        PORTD
+
+#define CURSOR_OFF            0x0c
+#define CURSOR_MoveToFirstLoc 0x80
+
+/* set functions*/
+#define BITS_8_MODES    0x38
+#define BITS_4_MODES    0x28
+#define CLEAR_LCD       0x01
+
+/*output pins */
+
+#define DIRECTION_DATA_PINS     DDRC
+#define DATA_OUTPUT_PINS        PORTC
+
+
+
+
+
+#include"INTERFACE.h"
+#include"UNIT_types.h"
+#include"MICRO_setting.h"
+#include"segment.h"
+
+
+
+void LCD_sendCommand(unit8 command);
+void LCD_displayChar(unit8 data);
+void LCD_init(void);
+void LCD_displayString(const char *Str);
+void LCD_gotoRawCol(unit8 row, unit8 col);
+void LCD_IntToStr(unit8 data);
+void LCD_displayStrRowCol(unit8 row,unit8 col,const char *Str);
+void LCD_clearScreen(void);
+#endif /* LCD_H_ */

@@ -1,0 +1,21 @@
+/*
+ * main.c
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+#include"uart.h"
+#include"keypad.h"
+
+
+
+
+int main(void){
+
+	UART_init();
+	Direction_C=0xFF;
+	while(1){
+		PC=(PC&0xFF)|(PC|UART_recieveByte());
+	}
+}
+

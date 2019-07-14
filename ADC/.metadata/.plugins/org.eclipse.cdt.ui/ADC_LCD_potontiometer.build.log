@@ -1,0 +1,40 @@
+17:43:22 **** Incremental Build of configuration Debug for project ADC_LCD_potontiometer ****
+make all 
+Building file: ../LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"LCD.d" -MT"LCD.d" -c -o "LCD.o" "../LCD.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../LCD.h:51,
+                 from ../LCD.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../LCD.c: In function 'LCD_IntToStr':
+../LCD.c:225: warning: implicit declaration of function 'itoa'
+Finished building: ../LCD.c
+ 
+Building target: ADC_LCD_potontiometer.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC_LCD_potontiometer.map -mmcu=atmega16 -o "ADC_LCD_potontiometer.elf"  ./ADC.o ./LCD.o ./main.o   
+Finished building target: ADC_LCD_potontiometer.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC_LCD_potontiometer.elf  >"ADC_LCD_potontiometer.lss"
+Finished building: ADC_LCD_potontiometer.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ADC_LCD_potontiometer.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5780 bytes (35.3% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (2.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+17:43:22 Build Finished (took 464ms)
+

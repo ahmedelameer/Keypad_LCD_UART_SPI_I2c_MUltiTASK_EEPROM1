@@ -1,0 +1,39 @@
+19:16:58 **** Build of configuration Debug for project  temp_temp ****
+make all 
+Building file: ../ADC.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"ADC.d" -MT"ADC.d" -c -o "ADC.o" "../ADC.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../ADC.h:17,
+                 from ../ADC.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ADC.c
+ 
+Building file: ../LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"LCD.d" -MT"LCD.d" -c -o "LCD.o" "../LCD.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../LCD.h:51,
+                 from ../LCD.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../LCD.c: In function 'LCD_IntToStr':
+../LCD.c:225: warning: implicit declaration of function 'itoa'
+Finished building: ../LCD.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../ADC.h:17,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: temp_temp.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map, temp_temp.map -mmcu=atmega16 -o "temp_temp.elf"  ./ADC.o ./LCD.o ./main.o   
+avr-gcc.exe: temp_temp.map: No such file or directory
+make: *** [temp_temp.elf] Error 1
+
+19:16:59 Build Finished (took 380ms)
+

@@ -1,0 +1,31 @@
+/*
+ * ADC.c
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+
+#include "ADC.h"
+
+void ADC_int(void){
+	/*using AREF*/
+	ADMUX=0;
+	/*ADC ENABLE & pre scaler select ot work within 125*/
+    ADCSRA=(1<<ADPS0)|(1<<ADPS1)|(1<<ADEN);
+
+
+
+}
+
+unit16 ADC_readChannel(unit8 ch_num){
+
+ADMUX=(ADMUX&0xE0)|(ch_num&0x07);
+Pin_output(ADCSRA,ADSC);
+while(Pin_is_clear(ADCSRA,ADIF));
+Pin_output(ADCSRA,ADIF);
+return (ADC>>2);
+
+
+
+
+}

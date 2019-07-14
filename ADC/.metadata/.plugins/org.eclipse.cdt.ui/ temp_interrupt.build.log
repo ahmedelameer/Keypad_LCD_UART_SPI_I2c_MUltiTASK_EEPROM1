@@ -1,0 +1,10 @@
+19:17:22 **** Build of configuration Debug for project  temp_interrupt ****
+make all 
+Building target: temp_interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map, temp_interrupt.map -mmcu=atmega16 -o "temp_interrupt.elf"  ./ADC.o ./LCD.o ./main.o   
+avr-gcc.exe: temp_interrupt.map: No such file or directory
+make: *** [temp_interrupt.elf] Error 1
+
+19:17:22 Build Finished (took 141ms)
+

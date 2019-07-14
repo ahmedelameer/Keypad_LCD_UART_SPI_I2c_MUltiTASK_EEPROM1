@@ -1,0 +1,40 @@
+/*
+ * main.c
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+
+#include"ADC.h"
+#include"LCD.h"
+
+
+
+
+int main(void){
+	unit16 value;
+	LCD_init();
+	ADC_int();
+	LCD_clearScreen();
+
+	while(1){
+		LCD_displayString("ADC value= ");
+		LCD_gotoRawCol(0,12);
+
+		value=ADC_readChannel(0);
+
+		LCD_IntToStr(value);
+		_delay_ms(3000);
+		LCD_clearScreen();
+
+
+
+
+	}
+
+
+
+
+
+
+}

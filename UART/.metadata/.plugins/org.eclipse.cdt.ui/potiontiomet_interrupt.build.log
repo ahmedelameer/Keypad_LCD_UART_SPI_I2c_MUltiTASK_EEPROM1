@@ -1,0 +1,38 @@
+18:19:03 **** Incremental Build of configuration Debug for project potiontiomet_interrupt ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../ADC.h:17,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: potiontiomet_interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,potiontiomet_interrupt.map -mmcu=atmega16 -o "potiontiomet_interrupt.elf"  ./ADC.o ./LCD.o ./main.o   
+Finished building target: potiontiomet_interrupt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S potiontiomet_interrupt.elf  >"potiontiomet_interrupt.lss"
+Finished building: potiontiomet_interrupt.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 potiontiomet_interrupt.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5828 bytes (35.6% Full)
+(.text + .data + .bootloader)
+
+Data:         22 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:19:04 Build Finished (took 539ms)
+

@@ -1,0 +1,21 @@
+11:49:12 **** Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"ADC.d" -MT"ADC.d" -c -o "ADC.o" "../ADC.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:16,
+                 from ../ADC.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../ADC.c: In function 'ADC_readchannel':
+../ADC.c:28: warning: control reaches end of non-void function
+Finished building: ../ADC.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega16 -o "ADC.elf"  ./ADC.o   
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o:(.init9+0x0): undefined reference to `main'
+make: *** [ADC.elf] Error 1
+
+11:49:12 Build Finished (took 260ms)
+

@@ -1,0 +1,24 @@
+/*
+ * main.c
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+
+
+#include"LCD.h"
+
+
+
+int main(void){
+
+	      LCD_displayChar("A");
+	      LCD_init();
+	      while(1){
+
+	      }
+
+
+
+
+}

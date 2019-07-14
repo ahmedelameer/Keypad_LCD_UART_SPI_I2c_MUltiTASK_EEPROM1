@@ -1,0 +1,21 @@
+/*
+ * main.c
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: Mohamed ELameer
+ */
+
+
+#include"uart.h"
+#include"keypad.h"
+
+
+
+
+int main(void){
+
+	UART_init();
+	while(1){
+	UART_sendByte(KeyPad_getPressedKey());
+	}
+}

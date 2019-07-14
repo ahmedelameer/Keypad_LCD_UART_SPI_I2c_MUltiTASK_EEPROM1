@@ -1,0 +1,7 @@
+00:40:10 **** Clean-only build of configuration Debug for project SPI_slave_lcd ****
+make clean 
+rm -rf  ./LCD.o ./SPI.o ./slave.o  sizedummy  SPI_slave_lcd.lss  ./LCD.d ./SPI.d ./slave.d  SPI_slave_lcd.elf
+ 
+
+00:40:10 Build Finished (took 100ms)
+

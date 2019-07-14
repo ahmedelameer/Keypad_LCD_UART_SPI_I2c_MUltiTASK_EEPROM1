@@ -1,0 +1,58 @@
+22:38:32 **** Build of configuration Debug for project SPI ****
+make all 
+Building file: ../LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"LCD.d" -MT"LCD.d" -c -o "LCD.o" "../LCD.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../LCD.h:51,
+                 from ../LCD.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../LCD.c: In function 'LCD_IntToStr':
+../LCD.c:225: warning: implicit declaration of function 'itoa'
+Finished building: ../LCD.c
+ 
+Building file: ../SPI.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"SPI.d" -MT"SPI.d" -c -o "SPI.o" "../SPI.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../SPI.h:10,
+                 from ../SPI.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../SPI.c
+ 
+Building file: ../master.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"master.d" -MT"master.d" -c -o "master.o" "../master.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../SPI.h:10,
+                 from ../master.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../master.c
+ 
+Building target: SPI.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SPI.map -mmcu=atmega16 -o "SPI.elf"  ./LCD.o ./SPI.o ./master.o   
+Finished building target: SPI.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S SPI.elf  >"SPI.lss"
+Finished building: SPI.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 SPI.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    8462 bytes (51.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:38:33 Build Finished (took 670ms)
+

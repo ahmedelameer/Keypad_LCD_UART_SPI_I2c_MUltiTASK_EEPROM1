@@ -1,0 +1,38 @@
+22:55:05 **** Incremental Build of configuration Debug for project SPI_LCD_S ****
+make all 
+Building file: ../slave.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"slave.d" -MT"slave.d" -c -o "slave.o" "../slave.c"
+In file included from ../MICRO_setting.h:17,
+                 from ../SPI.h:10,
+                 from ../slave.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../slave.c
+ 
+Building target: SPI_LCD_S.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SPI_LCD_S.map -mmcu=atmega16 -o "SPI_LCD_S.elf"  ./LCD.o ./SPI.o ./slave.o   
+Finished building target: SPI_LCD_S.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S SPI_LCD_S.elf  >"SPI_LCD_S.lss"
+Finished building: SPI_LCD_S.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 SPI_LCD_S.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6018 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:55:06 Build Finished (took 420ms)
+
